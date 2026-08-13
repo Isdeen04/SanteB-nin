@@ -1300,7 +1300,7 @@ class SanteBeninApp {
             this.toast('Erreur de suivi de position', 'error');
             this.stopLocationTracking();
           },
-          { enableHighAccuracy: true, timeout: 10000, maximumAge: 5000 }
+          { enableHighAccuracy: false, timeout: 30000, maximumAge: 5000 }
         );
         
         this.toast('Position activée ! Suivi en cours...', 'success');
@@ -1314,7 +1314,7 @@ class SanteBeninApp {
         const msgs = { 1: 'Autorisez la localisation.', 2: 'Pas de signal. Essayez ailleurs.', 3: 'Connexion faible. Réessayez.' };
         this.toast(msgs[err.code] || 'Localisation échouée.', 'error');
       },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      { enableHighAccuracy: false, timeout: 30000, maximumAge: 0 }
     );
   }
 
